@@ -1,7 +1,7 @@
 {
   "name": "coin-crawler",
   "version": "1.0.0",
-  "description": "coin",
+  "description": "coin-crawler",
   "main": "index.js",
   "dependencies": {
     "express": "4.16.2",
