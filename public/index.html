@@ -61,10 +61,19 @@
             text-align: right;
         }
 
+        #online {
+            display: inline-block;
+        }
+
+        #online_amount {
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
 <div id="outer">
+    <div id="online">在线人数：</div>
+    <div id="online_amount"></div>
     <table id="task">
         <tr id="platform">
             <th id="u_ts"></th>
@@ -174,6 +183,8 @@
                 $(`#platform .${info.platform} span`).css('color', 'orange');
             }
         });
+
+        socket.on('online', (amount) => $("#online_amount").text(amount));
 
         $('#u_ts').text(new Date(Date.now() + 3600000 * 8).toISOString().substr(11, 8));
         setInterval(() => $('#u_ts').text(new Date(Date.now() + 3600000 * 8).toISOString().substr(11, 8)), 1000);
